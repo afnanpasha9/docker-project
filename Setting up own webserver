@@ -1,0 +1,23 @@
+Setup of personal webserver:
+# yum install httpd
+# systemctl start httpd
+# docker pull centos:7 
+# docker  run  -it  --name webfutrons centos:7
+Install httpd service inside docker container launched from centos:image
+# yum install -y httpd
+# vi /var/www/html/futrons.html 
+Inside this file write own html code
+<!DOCTYPE html>
+<html>
+<body bgcolor = blue>
+<h1> Docker project bt TEAM FUTRONS</h1>
+<h2> This is our project made by collaboration of Afnan ,saba ,Mansoor and Anas</h2>
+</body>
+</html>
+save this file
+#exit
+exit from docker container
+Copy the webfutrons part to another file webfutrons
+#docker commit webfutrons webfutrons:v1
+Inspect all the details about webserver (webfutrons)
+#docker inspect webfutrons
