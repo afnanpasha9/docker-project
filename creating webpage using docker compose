@@ -1,0 +1,10 @@
+Create a new directory of mycompose
+
+# mkdir /mycompose
+
+Create a file of docker-compose.yml
+
+# vim docker-compose.yml
+
+Now type the following in this file and then save it.
+
