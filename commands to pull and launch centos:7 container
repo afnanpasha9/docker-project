@@ -1,0 +1,17 @@
+Launch centos image OS from docker hub
+# docker pull centos:7  --> This will pull the image of centos:7 from docker.hub website
+Launch a  new container OS named futrons
+# docker run -it  --name futrons centos:7
+To stop use 
+# docker stop futrons
+To start again use these 2 commands
+# docker start futrons
+# docker attach futrons
+
+now you can use this conatiner agagin and again for use with same permannet data.
+
+to remove conatiner
+# docker remove futrons
+
+to remove image
+# docker rmi centos:7
