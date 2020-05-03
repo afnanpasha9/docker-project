@@ -1,0 +1,14 @@
+We should have two machines connected to eachother , we will use ssh server for this process
+Follows steps below:
+
+# docker commit futrons futrons:v1 -> This will copy full conatiner futrons into a image futrons:v1 image
+
+# docker save futrons:v1 futrons:v1.tar -> This will copy full image futrons:v1 into a tar file futrons:v1.tar
+
+# scp futrons.tar root@192.168.43.7:/root --> To send to other system with ip 192.168.43.7
+
+These steps to be done in other system
+
+# docker save futrons:v1.tar futrons:v1 -> This will load and install the image futrons:v1 from the tar file futrons:v1.tar
+
+Now the other system can run this image using docker run command
