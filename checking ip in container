@@ -4,8 +4,7 @@ Since it do not have net-tools software installed.
 Inside the container:
 # cd /etc/yum.repos.d/
 # ls
-check the repo file
-# cd
+check the repo file 
 Install net-tools software
 # yum install net-tools 
 Now the ifconfig command works
