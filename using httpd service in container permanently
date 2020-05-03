@@ -1,0 +1,8 @@
+To permannetly actiavte ot keep running hhtpd server in conatiner we have to give command 
+# vim /root/.bashrc
+Here you add commands
+
+# rm -f /var/run/httpd/* --> To delete old httpd apache service files
+# /usr/sbin/httpd  --> To start httpd apache server
+
+These commands will on restart of container as  container always runs .bashrc on startup
