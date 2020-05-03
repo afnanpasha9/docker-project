@@ -1,2 +1,24 @@
 Install wordpress and mysql
 
+# docker pull mysql:5.7
+# docker pull wordpress:5.1.1-php7.3-apache
+
+
+Create volumes for wordpress and mysql
+
+# docker volume create mysql_storage
+# docker volume create wordpress_storage
+
+Create mysql database 
+
+# docker run -d -it -e MYSQL_ROOT_PASSWORD=***** -e MYSQL_USER=someuser -e MYSQL_PASSWORD=***** -e MYSQL_DATABASE=db -v mysql_storage:/var/lib/mysql --name dbos mysql:5.7
+
+Create Wordpress user using mysql database
+
+# docker run -dit -e WORDPRESS_DB_HOST=dbos -e WORDPRESS_DB_USER=someuser -e WORDPRESS_DB_PASSWORD=****** -e WORDPRESS_DB_NAME=db -v wordpress_storage:/var/www/html --name wpos -p 8080:80 --link dbos wordpress:5.1.1-php7.3-apache
+
+Now goto web browsre and type the url
+
+http://ipaddress:port   ex: http://192.168.43.7:8080
+
+Now create user and use the wepage
