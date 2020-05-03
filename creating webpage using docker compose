@@ -1,10 +1,72 @@
-Create a new directory of mycompose
+Install Docker Compose by using following commands:
+# curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose ----> This command will download docker compose
+# chmod +x /usr/local/bin/docker-compose   ----> To activate docker compose
+
+To create webpage follow this:
+
+1.Create a new directory of mycompose
 
 # mkdir /mycompose
 
-Create a file of docker-compose.yml
+2.Create a file of docker-compose.yml
 
 # vim docker-compose.yml
 
-Now type the following in this file and then save it.
+3.Now type the following in this docker-compose.yml file and then save it.
+
+version: '3'
+
+services:
+  dbos:
+    image: mysql:5.7
+    volumes:
+      - mysql_storage:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: *****
+      MYSQL_USER: someuser
+      MYSQL_PASSWORD: ******
+      MYSQL_DATABASE: db
+
+  wpos:
+    image: wordpress:5.1.1-php7.3-apache
+    restart: always
+    depends_on:
+      - dbos
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: dbos
+      WORDPRESS_DB_USER: someuser
+      WORDPRESS_DB_PASSWORD: *******
+      WORDPRESS_DB_NAME: db
+    volumes:
+      - wordpress_storage:/var/www/html
+
+volumes:
+    wordpress_storage:
+    mysql_storage:
+                       
+                       
+                       
+                       press esc and then press :wq to save and exit
+                       
+4. Start the docker compose
+
+# docker-compose up -d   --> To start docker-cmpose in background
+
+5. To confirm start
+
+# docker-compose logs 
+
+Now go to webpage and enter the url
+
+https://ipaddress:port ex. https://192.168.43.17:8080  
+Now create user and access webpage.
+
+
+To stop or close the webpage use command 
+# docker-compose stop
+
+
 
