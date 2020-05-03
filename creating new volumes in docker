@@ -1,0 +1,7 @@
+To create new volume in docker follow the steps below 
+
+# docker create volume futrons_storage --> This will craete new volume of name futrons_storage
+
+To use this volume in container 
+
+# docker run -i -t --name futrons -v futrons_storage centos:7 --> This will centos:7 imah=ge as container futrons mounted to storage futrons_storage
