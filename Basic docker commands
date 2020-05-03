@@ -1,0 +1,28 @@
+# docker ps -> Shows running containers
+# docker ps -a  -> Shows all conatiners
+# docker pull -> downloads and installs images from dockerhub
+# docker push -> uploads images to dockerhub
+# docker run -i -t run --name somaname os:version -> To lauch a container , to open terminal and interact and save the container to name somename
+# docker run -d -i -t run  --name somaname os:version -> To lauch a container , to open terminal in backgroud and interact and save the container to name somename
+#free -m -> Shows ram usage
+# watch -n 1 -> Shows ram usage and upadtes per second
+# docker container ls -a -> Shows all conatiners
+# docker container ls -a -q -> Shows all conatiners only repository id's
+# docker start contname -> to start exsiting container
+# docker attach contname -> to open in terminal started and existing conatiner
+# docker rm contname -> to remove conatiner
+# docker stop contname -> to stop runnning container
+# docker --help -> to see all options of docker
+# docker commit futrons futrons:v1 -> to copy and container and make a image
+# docker tag futrons:v1 affu7222/futrons:v1 -> to rename image
+# docker rename futrons futronsteam -> to rename container
+# ifconfig -> to see ip addresses
+# docker logs -> to see all logs of containet
+# docker exec -it contname command -> to run command in background i.e without attiching to container
+# docker network ls -> to see network list
+# docker network inspect network name -> to inspect network ex.  docker network inspect bridge
+# cat /etc/resolv.conf -> to see dns server
+# lscpu -> to see all cpu's
+# uname  -> to see all details of base os
+# route -n -> To see ip's of all connected devices
+# docker info  -> To see completet information of docker
